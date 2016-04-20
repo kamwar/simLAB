@@ -1,0 +1,329 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sim_2G>
+  <mf id="3F00">
+    <df id="7F10">
+      <df id="5F50">
+        <name>DF_GRAPHICS</name>
+        <ef id="4F20">
+          <name>EF_IMG</name>
+        </ef>
+        <ef id="6F06">
+          <name>EF_ARR</name>
+        </ef>
+      </df>
+      <df id="5F3C">
+        <ef id="6F06">
+          <name>EF_ARR</name>
+        </ef>
+      </df>
+      <ef id="6F3D">
+        <name>EF_CCP</name>
+      </ef>
+      <ef id="6F3A">
+        <name>EF_ADN</name>
+      </ef>
+      <ef id="6F3C">
+        <name>EF_SMS</name>
+      </ef>
+      <ef id="6F3B">
+        <name>EF_FDN</name>
+      </ef>
+      <name>DF_TELECOM</name>
+      <ef id="6F4D">
+        <name>EF_BDN</name>
+      </ef>
+      <ef id="6F4E">
+        <name>EF_EXT4</name>
+      </ef>
+      <ef id="6F4F">
+        <name>EF_ECCP</name>
+      </ef>
+      <ef id="6F4A">
+        <name>EF_EXT1</name>
+      </ef>
+      <ef id="6F4B">
+        <name>EF_EXT2</name>
+      </ef>
+      <ef id="6F4C">
+        <name>EF_EXT3</name>
+      </ef>
+      <ef id="6F49">
+        <name>EF_SDN</name>
+      </ef>
+      <ef id="6F44">
+        <name>EF_LND</name>
+      </ef>
+      <ef id="6F47">
+        <name>EF_SMSR</name>
+      </ef>
+      <ef id="6F40">
+        <name>EF_MSISDN</name>
+      </ef>
+      <ef id="6F42">
+        <name>EF_SMSP</name>
+      </ef>
+      <ef id="6F43">
+        <name>EF_SMSS</name>
+      </ef>
+      <ef id="6F58">
+        <name>EF_CMI</name>
+      </ef>
+      <ef id="6F06">
+        <name>EF_ARR</name>
+      </ef>
+    </df>
+    <df id="7F20">
+      <ef id="6F18">
+        <name>EF_CPHS_ONSHF</name>
+      </ef>
+      <ef id="6F19">
+        <name>EF_CPHS_INFN</name>
+      </ef>
+      <df id="5F31">
+        <name>DF_GLOBALSTAR</name>
+      </df>
+      <ef id="6F7B">
+        <name>EF_FPLMN</name>
+      </ef>
+      <ef id="6F11">
+        <name>EF_CPHS_VMW</name>
+      </ef>
+      <ef id="6F12">
+        <name>EF_CPHS_SST</name>
+      </ef>
+      <ef id="6F13">
+        <name>EF_CPHS_CFF</name>
+      </ef>
+      <ef id="6F14">
+        <name>EF_CPHS_ONSTR</name>
+      </ef>
+      <ef id="6F15">
+        <name>EF_CPHS_CSP</name>
+      </ef>
+      <ef id="6F16">
+        <name>EF_CPHS</name>
+      </ef>
+      <ef id="6F17">
+        <name>EF_CPHS_MBXN</name>
+      </ef>
+      <ef id="6F78">
+        <name>EF_ACC</name>
+      </ef>
+      <ef id="6F74">
+        <name>EF_BCCH</name>
+      </ef>
+      <df id="5F70">
+        <name>DF_SOLSA</name>
+        <ef id="4F30">
+          <name>EF_SAI</name>
+        </ef>
+        <ef id="4F31">
+          <name>EF_SLL</name>
+        </ef>
+      </df>
+      <df id="5F30">
+        <name>DF_IRIDIUM</name>
+      </df>
+      <ef id="6F07">
+        <name>EF_IMSI</name>
+      </ef>
+      <ef id="6F06">
+        <name>EF_ARR</name>
+      </ef>
+      <ef id="6F05">
+        <name>EF_LP</name>
+      </ef>
+      <ef id="6F61">
+        <name>EF_OPLMNWACT</name>
+      </ef>
+      <ef id="6F60">
+        <name>EF_PLMNWACT</name>
+      </ef>
+      <ef id="6F63">
+        <name>EF_CPBCCH</name>
+      </ef>
+      <ef id="6F62">
+        <name>EF_HPLMNWACT</name>
+      </ef>
+      <ef id="6F65">
+        <name>EF_RPLMN_ACT</name>
+      </ef>
+      <ef id="6F64">
+        <name>EF_INVSCAN</name>
+      </ef>
+      <ef id="6FD2">
+        <name>EF_MMSUCP</name>
+      </ef>
+      <ef id="6FD1">
+        <name>EF_MMSUP</name>
+      </ef>
+      <ef id="6FD0">
+        <name>EF_MMSICP</name>
+      </ef>
+      <ef id="6FCF">
+        <name>EF_EXT8</name>
+      </ef>
+      <ef id="6FCD">
+        <name>EF_SPDI</name>
+      </ef>
+      <ef id="6FCE">
+        <name>EF_MMSN</name>
+      </ef>
+      <ef id="6FCC">
+        <name>EF_EXT7</name>
+      </ef>
+      <ef id="6FCA">
+        <name>EF_MWIS</name>
+      </ef>
+      <df id="5F33">
+        <name>DF_ACES</name>
+      </df>
+      <ef id="6F54">
+        <name>EF_SUME</name>
+      </ef>
+      <df id="5F60">
+        <name>DF_CTS</name>
+      </df>
+      <ef id="6F50">
+        <name>EF_CBMIR</name>
+      </ef>
+      <ef id="6F51">
+        <name>EF_NIA</name>
+      </ef>
+      <ef id="6F52">
+        <name>EF_KCGPRS</name>
+      </ef>
+      <ef id="6F53">
+        <name>EF_LOCIGPRS</name>
+      </ef>
+      <ef id="6FC6">
+        <name>EF_OPL</name>
+      </ef>
+      <ef id="6FC7">
+        <name>EF_MBDN</name>
+      </ef>
+      <ef id="6FC5">
+        <name>EF_PNN</name>
+      </ef>
+      <ef id="6FC8">
+        <name>EF_EXT6</name>
+      </ef>
+      <ef id="6FC9">
+        <name>EF_MBI</name>
+      </ef>
+      <df id="5F3C">
+        <name>DF_MEXE</name>
+        <ef id="4F40">
+          <name>EF_MEXE-ST</name>
+        </ef>
+        <ef id="4F41">
+          <name>EF_ORPK</name>
+        </ef>
+        <ef id="4F42">
+          <name>EF_ARPK</name>
+        </ef>
+        <ef id="4F43">
+          <name>EF_TPRK</name>
+        </ef>
+      </df>
+      <df id="5F32">
+        <name>DF_ICO</name>
+      </df>
+      <ef id="6F41">
+        <name>EF_PUCT</name>
+      </ef>
+      <ef id="6F47">
+        <name>EF_SMSR</name>
+      </ef>
+      <ef id="6F46">
+        <name>EF_SPN</name>
+      </ef>
+      <ef id="6F45">
+        <name>EF_CBMI</name>
+      </ef>
+      <ef id="6F48">
+        <name>EF_CBMID</name>
+      </ef>
+      <ef id="6FB5">
+        <name>EF_EMLPP</name>
+      </ef>
+      <ef id="6FB4">
+        <name>EF_VBSS</name>
+      </ef>
+      <ef id="6FB7">
+        <name>EF_ECC</name>
+      </ef>
+      <ef id="6FB6">
+        <name>EF_AAEM</name>
+      </ef>
+      <ef id="6FB1">
+        <name>EF_VGCS</name>
+      </ef>
+      <ef id="6FB3">
+        <name>EF_VBS</name>
+      </ef>
+      <ef id="6FB2">
+        <name>EF_VGCSS</name>
+      </ef>
+      <ef id="6F3F">
+        <name>EF_GID2</name>
+      </ef>
+      <ef id="6F3E">
+        <name>EF_GID1</name>
+      </ef>
+      <ef id="6FAD">
+        <name>EF_AD</name>
+      </ef>
+      <ef id="6FAE">
+        <name>EF_PHASE</name>
+      </ef>
+      <ef id="6F37">
+        <name>EF_ACMMAX</name>
+      </ef>
+      <ef id="6F32">
+        <name>EF_CNL</name>
+      </ef>
+      <ef id="6F30">
+        <name>EF_PLMNSEL</name>
+      </ef>
+      <ef id="6F31">
+        <name>EF_HPLMN</name>
+      </ef>
+      <ef id="6F38">
+        <name>EF_SST</name>
+      </ef>
+      <ef id="6F39">
+        <name>EF_ACM</name>
+      </ef>
+      <name>DF_GSM</name>
+      <ef id="6F7E">
+        <name>EF_LOCI</name>
+      </ef>
+      <ef id="6F20">
+        <name>EF_KC</name>
+      </ef>
+      <ef id="6FCB">
+        <name>EF_CFIS</name>
+      </ef>
+      <ef id="6F2C">
+        <name>EF_DCK</name>
+      </ef>
+      <df id="5F40">
+        <name>DF_PCS_1900</name>
+      </df>
+    </df>
+    <name>MF</name>
+    <df id="7F22">
+      <name>DF_IS_41</name>
+    </df>
+    <df id="7F23">
+      <name>DF_FP_CTS</name>
+    </df>
+    <ef id="2FE2">
+      <name>EF_ICCID</name>
+    </ef>
+    <ef id="2F05">
+      <name>EF_ELP</name>
+    </ef>
+  </mf>
+</sim_2G>

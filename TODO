@@ -1,0 +1,30 @@
+>> SIM SOFT <<
+# Implement SFI. Now as a workaround the FILE_NOT_FOUND status is returned
+# Implement security attributes (when EF_ARR is not set as access rule) for USIM
+# Implement millenge authentication for 3G
+# Implement sqn range check and EF_SQN update during dummy xor authentication
+# Add ADM4 tag inside fs xml file
+# Add support for 2G cards. Now only a few commands support this mode.
+# Move function related to logical channel inside LogicalChannel class
+# Implement opening logical channel with select command
+# Implement file linking (ADF0/EF_IMSI shall be linked with /7F20/EF_IMSI)
+# Implement INCREASE and DECREASE command
+
+>> SIM SOFT SAT <<
+# Display post action handler response without showing displayText in the meantime.
+  Check for delayed proactive response
+
+>> COMMON <<
+# Number ADFs staring from 1 (e.g ADF1, ADF2 etc.)
+# Handle currentFile path for selecting files by path from MF
+  (e.g. 00A40804067F105F3A4F3A)
+
+>> KNOWN ISSUE <<
+# ADF creation doesn't work for Gemalto v2.1 and Anritsu ISIM cards.
+  INCORRECT_PARAMETER_IN_DATA_FIELD or INCORRECT_PARAMETERS_P1_P2 is returned.
+  Many different combinations have been checked using:
+  - Security Attribute Tag (8Bh)
+  - PIN Status Template DO Tag (C6h)
+  - DF_AID tag (84h) included in 'A5' tag
+# Gemalto card doesn't support RESIZE_FILE command.
+  It supports EXTEND command instead. Removing a file record is impossible.
