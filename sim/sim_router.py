@@ -78,14 +78,10 @@ class SimRouter(object):
         self.routerMode = ROUTER_MODE_DISABLED
 
         if self.mode != SIMTRACE_OFFLINE:
-            try:
-                self.dev = self.usb_find(0x03eb, 0x6119)
-            except ValueError:
+            self.dev = self.usb_find(0x03eb, 0x6119)
+            if self.dev is None:
                 self.logging.warning("libusb0 is not installed")
                 self.dev = None
-            if self.dev:
-                self.dh = self.dev.open()
-            else:
                 self.mode = SIMTRACE_OFFLINE
         self.simCtrl = None
         self.loop = None
@@ -118,15 +114,15 @@ class SimRouter(object):
     def usbCtrlOut(self, req, buf):
         if self.mode == SIMTRACE_OFFLINE:
             return []
-        return self.dh.controlMsg(0x40,
-                                  request=req,    # R-APDU
-                                  buffer=buf,
+        return self.dev.ctrl_transfer(0x40,
+                                  bRequest=req,    # R-APDU
+                                  data_or_wLength=buf,
                                   timeout=500)
 
     def usbCtrlIn(self, req):
-        return self.dh.controlMsg(0xC0,
-                                  request=req,
-                                  buffer=512,
+        return self.dev.ctrl_transfer(0xC0,
+                                  bRequest=req,
+                                  data_or_wLength=512,
                                   timeout=512)
 
     def receiveData(self, cmd):
@@ -669,16 +665,13 @@ class SimRouter(object):
         self.loggingApdu.info(str)
 
     def usb_find(self, idVendor, idProduct):
-        busses = usb.busses()
-        for bus in busses:
-            devices = bus.devices
-            for dev in devices:
-                if ((dev.idVendor  == idVendor) and
-                    (dev.idProduct == idProduct)):
-                    return dev
-        self.logging.error("simlabTrace not connected! USB %04X:%04X not found\n" %(idVendor, idProduct))
-        self.mode = SIMTRACE_OFFLINE
-        return None
+        LIBUSB_PATH = "/usr/lib/libusb-1.0.so"
+        try:
+            dev = usb.core.find(idVendor=idVendor, idProduct=idProduct)
+        except:
+            backend = usb.backend.libusb1.get_backend(find_library=lambda x: LIBUSB_PATH)
+            dev = usb.core.find(idVendor=idVendor, idProduct=idProduct, backend=backend)
+        return dev
 
 extHandler = None
 def setLoggerExtHandler(handler):
