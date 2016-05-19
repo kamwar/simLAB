@@ -26,7 +26,7 @@ ROUTER_MODE_INTERACTIVE = 1
 ROUTER_MODE_TELNET = 2
 ROUTER_MODE_DBUS = 3
 
-_version_ = 1.0
+_version_ = 1.1
 
 # SIMtrace slave commands and events, see iso7816_slave.h
 CMD_SET_ATR  = 0
@@ -35,6 +35,8 @@ CMD_HALT     = 2
 CMD_POLL     = 3
 CMD_R_APDU   = 4
 
+# TODO: check why this event is received, at best remove it
+EVT_UNKNOWN  = 0
 EVT_RESET    = 2
 EVT_C_APDU   = 4
 
@@ -80,8 +82,7 @@ class SimRouter(object):
         if self.mode != SIMTRACE_OFFLINE:
             self.dev = self.usb_find(0x03eb, 0x6119)
             if self.dev is None:
-                self.logging.warning("libusb0 is not installed")
-                self.dev = None
+                self.logging.warning("Simtrace not connected!")
                 self.mode = SIMTRACE_OFFLINE
         self.simCtrl = None
         self.loop = None
@@ -159,6 +160,8 @@ class SimRouter(object):
             data = msg[4:]
         elif evt == EVT_RESET:
             pass
+        elif evt == EVT_UNKNOWN:
+            return None, None
         else:
             self.loggingApdu.info("unknown event: %s\n" % hextools.bytes2hex(msg))
         return (evt, data)
@@ -670,6 +673,9 @@ class SimRouter(object):
             dev = usb.core.find(idVendor=idVendor, idProduct=idProduct)
         except:
             backend = usb.backend.libusb1.get_backend(find_library=lambda x: LIBUSB_PATH)
+            if not backend:
+                logging.error("libusb-1.0 not found")
+                return None
             dev = usb.core.find(idVendor=idVendor, idProduct=idProduct, backend=backend)
         return dev
 
